@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <p align="right">
+    <a href="{% url 'logout' %}">Logout</a>
+  </p>
+  <h2>Hi, {{ user.get_full_name }} <small>{{ user.username }}</small>!</h2>
+  <p>Your email address: {{ user.email }}</p>
+  {% if user.email %}
+    <p> If you are ready to Upload Images click <a href="{% url 'upload_images' %}">here</a></p>
+  {% endif %}
+{% endblock %}
